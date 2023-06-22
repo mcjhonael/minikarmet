@@ -1,49 +1,48 @@
 import React, { useEffect, useState } from "react";
-import { getCategorias } from "../../../../services/categoria";
-import CategoriaFormulario from "../components/CategoriaFormulario";
-import CategoriaTabla from "../components/CategoriaTabla";
-
+import { getMarca } from "../../../../services/Marca";
+import MarcaFormulario from "../components/MarcaFormulario";
+import MarcaTabla from "../components/MarcaTabla";
 
 const AdminMarcas = () => {
   const [dato, setDato] = useState([]);
   const [modo, setModo] = useState("crear");
-  const [categ, setCateg] = useState({});
+  const [marca, setMarca] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const obtenerCategoria = () => {
-    getCategorias().then((respuesta) => {
+  const obtenerMarca = () => {
+    getMarca().then((respuesta) => {
       setDato(respuesta);
     });
     setLoading(false);
   };
   useEffect(() => {
-    obtenerCategoria();
+    obtenerMarca();
   }, []);
 
   return (
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-md-8">
-          <CategoriaFormulario
+          <MarcaFormulario
             dato={dato}
-            obtenerCategoria={obtenerCategoria}
+            obtenerMarca={obtenerMarca}
             modo={modo}
             setModo={setModo}
-            categ={categ}
-            setCateg={setCateg}
+            marca={marca}
+            setMarca={setMarca}
           />
         </div>
       </div>
 
       <div className="row justify-content-center mt-4">
         <div className="col-md-8">
-          <CategoriaTabla
+          <MarcaTabla
             dato={dato}
-            obtenerCategoria={obtenerCategoria}
+            obtenerMarca={obtenerMarca}
             modo={modo}
             setModo={setModo}
-            categ={categ}
-            setCateg={setCateg}
+            marca={marca}
+            setMarca={setMarca}
             loading={loading}
           />
         </div>
