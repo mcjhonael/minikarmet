@@ -1,7 +1,7 @@
 import React from "react";
-import Categoria from "./Categoria";
+import Categoria from "./CategoriaRegistro";
 
-const Categorias = ({
+const CategoriaTabla = ({
   dato,
   obtenerCategoria,
   modo,
@@ -50,4 +50,4 @@ const Categorias = ({
   );
 };
 
-export default Categorias;
+export default CategoriaTabla;

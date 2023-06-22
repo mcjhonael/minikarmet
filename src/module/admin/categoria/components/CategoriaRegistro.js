@@ -1,5 +1,6 @@
 import React from "react";
-import { deleteCategorias } from "../services/services";
+import { deleteCategorias } from "../../../../services/categoria";
+
 import Swal from "sweetalert2";
 
 const Categoria = ({

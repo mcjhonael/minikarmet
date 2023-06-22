@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { postCategorias, putCategoria } from "../services/services";
+import { postCategorias, putCategoria } from "../../../../services/categoria";
 import Swal from "sweetalert2";
 
-const CrearCategoria = ({
+const CategoriaFormulario = ({
   dato,
   obtenerCategoria,
   modo,
@@ -124,4 +124,4 @@ const CrearCategoria = ({
   );
 };
 
-export default CrearCategoria;
+export default CategoriaFormulario;

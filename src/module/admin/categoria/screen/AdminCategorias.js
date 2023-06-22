@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Categorias from "./TablaCategorias";
-import CrearCategoria from "./FormCategoria";
-import { getCategorias } from "../services/services";
-
-const CategoriaPri= () => {
+import { getCategorias } from "../../../../services/categoria";
+import CategoriaFormulario from "../components/CategoriaFormulario";
+import CategoriaTabla from "../components/CategoriaTabla";
+import CategoriaCargando from "../components/CategoriaCargando"
+const AdminCategoria= () => {
   const [dato, setDato] = useState([]);
   const [modo, setModo] = useState("crear");
   const [categ, setCateg] = useState({});
@@ -21,7 +21,7 @@ const CategoriaPri= () => {
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-md-8">
-          <CrearCategoria
+          <CategoriaFormulario
             dato={dato}
             obtenerCategoria={obtenerCategoria}
             modo={modo}
@@ -34,7 +34,8 @@ const CategoriaPri= () => {
 
       <div className="row justify-content-center mt-4">
         <div className="col-md-8">
-          <Categorias
+        <CategoriaCargando/>
+          <CategoriaTabla
             dato={dato}
             obtenerCategoria={obtenerCategoria}
             modo={modo}
@@ -48,4 +49,4 @@ const CategoriaPri= () => {
   );
 };
 
-export default CategoriaPri;
+export default AdminCategoria;

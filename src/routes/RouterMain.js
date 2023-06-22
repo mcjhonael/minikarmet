@@ -1,7 +1,9 @@
 import React from "react";
-import Home from "../screen/Home";
-import CategoriaPri from "../screen/CategoriaPrin";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import AdminCategoria from "../module/admin/categoria/screen/AdminCategorias";
+import AdminMarcas from "../module/admin/marcas/screens/AdminMarcas";
+import AdminMedidas from "../module/admin/medida/screens/AdminMedidas";
+import Home from "../module/admin/categoria/components/Home";
 const RouterMain = () => {
   return (
     <Router>
@@ -18,16 +20,25 @@ const RouterMain = () => {
                 Categoria
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/marcas">
+                Marcas
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/medidas">
+                medidas
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
 
       <Routes>
-        <Route
-          path="/categoria"
-          element={<CategoriaPri></CategoriaPri>}
-        ></Route>
-        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/"  element={<Home></Home>} />
+        <Route path="/categoria" element={<AdminCategoria/>} />
+        <Route path="/marcas" element={<AdminMarcas />} />
+        <Route path="/medidas" element={<AdminMedidas />} />
       </Routes>
     </Router>
   );
