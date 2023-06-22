@@ -2,16 +2,19 @@ import React, { useEffect, useState } from "react";
 import { getCategorias } from "../../../../services/categoria";
 import CategoriaFormulario from "../components/CategoriaFormulario";
 import CategoriaTabla from "../components/CategoriaTabla";
-import CategoriaCargando from "../components/CategoriaCargando"
-const AdminCategoria= () => {
+
+
+const AdminCategorias = () => {
   const [dato, setDato] = useState([]);
   const [modo, setModo] = useState("crear");
   const [categ, setCateg] = useState({});
+  const [loading, setLoading] = useState(true);
 
   const obtenerCategoria = () => {
     getCategorias().then((respuesta) => {
       setDato(respuesta);
     });
+    setLoading(false);
   };
   useEffect(() => {
     obtenerCategoria();
@@ -34,7 +37,6 @@ const AdminCategoria= () => {
 
       <div className="row justify-content-center mt-4">
         <div className="col-md-8">
-        <CategoriaCargando/>
           <CategoriaTabla
             dato={dato}
             obtenerCategoria={obtenerCategoria}
@@ -42,6 +44,7 @@ const AdminCategoria= () => {
             setModo={setModo}
             categ={categ}
             setCateg={setCateg}
+            loading={loading}
           />
         </div>
       </div>
@@ -49,4 +52,4 @@ const AdminCategoria= () => {
   );
 };
 
-export default AdminCategoria;
+export default AdminCategorias;

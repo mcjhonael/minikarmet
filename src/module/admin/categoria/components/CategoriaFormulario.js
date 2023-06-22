@@ -80,6 +80,7 @@ const CategoriaFormulario = ({
 
   return (
     <form className="shadow mt-4 borde" onSubmit={handleSubmit}>
+    <h2> Crear Categoria</h2>
       <div className=" form-floating mb-3">
         <input
           type="text"

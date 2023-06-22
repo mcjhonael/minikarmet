@@ -1,5 +1,7 @@
 import React from "react";
-import Categoria from "./CategoriaRegistro";
+import { deleteCategorias } from "../../../../services/categoria";
+import CategoriaCargando from "../components/CategoriaCargando";
+import Swal from "sweetalert2";
 
 const CategoriaTabla = ({
   dato,
@@ -8,45 +10,93 @@ const CategoriaTabla = ({
   setModo,
   categ,
   setCateg,
+  loading,
 }) => {
+  const handleDelete = (objDato) => {
+    console.log(objDato);
+    deleteCategorias(objDato.id).then((resp) => {
+      console.log(resp);
+      if (resp.id) {
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "Eliminado correctamente",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        obtenerCategoria();
+        // setLoading(false)
+      }
+    });
+  };
+  const handleUpdate = (dato) => {
+    setModo("editar");
+    setCateg(dato);
+  };
   return (
-    <table
-      className="table table-hover table-bordered justify-content-center"
-      border="1px"
-    >
-      <thead>
-        <tr>
-          <th>
-            <strong>ID</strong>
-          </th>
-          <th>
-            <strong>Nombre</strong>
-          </th>
-          <th>
-            <strong>Descripcion</strong>
-          </th>
-          <th>
-            <strong>Acciones</strong>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {dato.map((objDato, index) => {
-          return (
-            <Categoria
-              objDato={objDato}
-              index={index}
-              key={index}
-              obtenerCategoria={obtenerCategoria}
-              modo={modo}
-              setModo={setModo}
-              categ={categ}
-              setCateg={setCateg}
-            />
-          );
-        })}
-      </tbody>
-    </table>
+    <div className="row mt-4">
+      <div className="col">
+        <div className="card shadow">
+          <div className="card-body">
+            <h2>tabla de categoria</h2>
+            {loading ? (
+              <CategoriaCargando />
+            ) : (
+              <table
+                className="table table-hover table-bordered justify-content-center"
+                border="1px"
+              >
+                <thead>
+                  <tr>
+                    <th>
+                      <strong>ID</strong>
+                    </th>
+                    <th>
+                      <strong>Nombre</strong>
+                    </th>
+                    <th>
+                      <strong>Descripcion</strong>
+                    </th>
+                    <th>
+                      <strong>Acciones</strong>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {dato.map((objDato, index) => {
+                    return (
+                      <tr key={objDato.id}>
+                        <td>{index + 1}</td>
+                        <td>{objDato.nombre}</td>
+                        <td>{objDato.descripcion}</td>
+                        <td>
+                          <button
+                            className="btn btn-outline-warning"
+                            onClick={() => {
+                              handleUpdate(objDato);
+                            }}
+                          >
+                            Actualizar
+                          </button>
+                          <button
+                            className="btn btn-outline-danger"
+                            onClick={() => {
+                              handleDelete(objDato);
+                            }}
+                          >
+                            Eliminar
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
