@@ -5,6 +5,7 @@ import AdminMedidas from "../module/admin/medida/screens/AdminMedidas";
 import Home from "../module/admin/categoria/components/Home";
 import AdminMarcas from "../module/admin/marcas/screens/AdminMarcas";
 import RouterAdmin from "./RouterAdmin";
+import AdminProducto from "../module/admin/producto/screens/AdminProducto";
 const RouterMain = () => {
   return (
     <Router>
@@ -15,6 +16,7 @@ const RouterMain = () => {
           <Route path="categorias" element={<AdminCategorias />} />
           <Route path="marcas" element={<AdminMarcas />} />
           <Route path="medidas" element={<AdminMedidas />} />
+          <Route path="productos" element={<AdminProducto />} />
         </Route>
         <Route path="/vendedor" element={<AdminMedidas />} />
       </Routes>

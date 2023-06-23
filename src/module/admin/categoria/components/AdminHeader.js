@@ -30,6 +30,14 @@ const AdminHeader = () => {
                 medidas
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink
+                to="productos"
+                className="nav-link"
+              >
+                productos
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>
