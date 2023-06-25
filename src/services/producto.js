@@ -29,7 +29,8 @@ export const putProducto = async (objProducto) => {
 };
 
 export const deleteProducto = async (id) => {
-  const response = await fetch(`${URL}/productos/${id}`, { method: "DELETE" });
+  const response = await fetch(`${URL}/productos/${id}`, { method: "DELETE"});
   const json = await response.json();
+  console.log(` mi json ${json}`);
   return json;
 };

@@ -12,7 +12,6 @@ const AdminProducto = () => {
 
   const obtenerProducto = () => {
     getProducto().then((respuesta) => {
-      // console.log(respuesta);
       setDato(respuesta);
     });
     setLoading(false);
@@ -46,6 +45,7 @@ const AdminProducto = () => {
             producto={producto}
             setProducto={setProducto}
             loading={loading}
+            setLoading={setLoading}
           />
         </div>
       </div>

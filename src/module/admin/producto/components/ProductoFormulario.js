@@ -135,16 +135,18 @@ const ProductoFormulario = ({
           type="text"
           className="form-control "
           name="nombre"
-          placeholder="Nombre"
           onChange={handleChange}
           value={nombre}
+          id="inputNombre"
         />
-        <label htmlFor="nombre" className="form-label">
+        <label htmlFor="inputNombre" className="form-label">
           Nombre Producto
         </label>
         {error ? (
           <small className=" text-danger">producto dublicada</small>
-        ) : ""}
+        ) : (
+          ""
+        )}
       </div>
 
       <div className=" form-floating mb-3">
@@ -152,11 +154,11 @@ const ProductoFormulario = ({
           type="text"
           className="form-control"
           name="descripcion"
-          placeholder="Descripcion"
           onChange={handleChange}
+          id="inputDescripcion"
           value={descripcion}
         />
-        <label htmlFor="descripcion" className="form-label">
+        <label htmlFor="inputDescripcion" className="form-label">
           Descripcion Producto
         </label>
       </div>
@@ -165,11 +167,11 @@ const ProductoFormulario = ({
           type="number"
           className="form-control"
           name="precioCompra"
-          placeholder="precioCompra"
           onChange={handleChange}
           value={precioCompra}
+          id="inputPrecioCompra"
         />
-        <label htmlFor="precioCompra" className="form-label">
+        <label htmlFor="inputPrecioCompra" className="form-label">
           Precio Compra Producto
         </label>
       </div>
@@ -178,11 +180,11 @@ const ProductoFormulario = ({
           type="number"
           className="form-control"
           name="precioVenta"
-          placeholder="precioVenta"
           onChange={handleChange}
           value={precioVenta}
+          id="inputPrecioVenta"
         />
-        <label htmlFor="precioVenta" className="form-label">
+        <label htmlFor="inputPrecioVenta" className="form-label">
           Precio Venta Producto
         </label>
       </div>
@@ -191,28 +193,28 @@ const ProductoFormulario = ({
           type="number"
           className="form-control"
           name="stock"
-          placeholder="stock"
           onChange={handleChange}
           value={stock}
+          id="inputStock"
         />
-        <label htmlFor="stock" className="form-label">
+        <label htmlFor="inputStock" className="form-label">
           Stock Producto
         </label>
       </div>
 
       <div className="row">
         <div className="col-md-4">
-          <label htmlFor="inputState" className="form-label">
+          <label htmlFor="inputCategoria" className="form-label">
             categoria
           </label>
           <select
-            id="inputState"
+            id="inputCategoria"
             className="form-select"
             name={"categoria_id"}
             value={categoria_id}
             onChange={handleChange}
           >
-            <option>-- Seleccione --</option>
+            <option value="0">-- Seleccione --</option>
             {catego.map((objCatego) => {
               // console.log(objCatego);
               return (
@@ -224,17 +226,17 @@ const ProductoFormulario = ({
           </select>
         </div>
         <div className="col-md-4">
-          <label htmlFor="inputState" className="form-label">
+          <label htmlFor="inputMarca" className="form-label">
             marca
           </label>
           <select
-            id="inputState"
+            id="inputMarca"
             className="form-select"
             name="marca_id"
             value={marca_id}
             onChange={handleChange}
           >
-            <option>-- Seleccione --</option>
+            <option value="0">-- Seleccione --</option>
             {marc.map((objMarc) => {
               //   console.log(objMarc);
               return (
@@ -246,19 +248,19 @@ const ProductoFormulario = ({
           </select>
         </div>
         <div className="col-md-4">
-          <label htmlFor="inputState" className="form-label">
+          <label htmlFor="inputMedida" className="form-label">
             medida
           </label>
           <select
-            id="inputState"
+            id="inputMedida"
             className="form-select"
             onChange={handleChange}
             name="medida_id"
             value={medida_id}
           >
-            <option>-- Seleccione --</option>
+            <option value="0">-- Seleccione --</option>
             {medid.map((objMedid) => {
-                console.log(objMedid.id);
+              // console.log(objMedid.id);
               return (
                 <option key={objMedid.id} value={objMedid.id}>
                   {objMedid.nombre}
