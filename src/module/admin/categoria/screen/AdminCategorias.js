@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getCategorias } from "../../../../services/categoria";
+import { getCategoria} from "../../../../services/categoria";
 import CategoriaFormulario from "../components/CategoriaFormulario";
 import CategoriaTabla from "../components/CategoriaTabla";
 
@@ -11,7 +11,7 @@ const AdminCategorias = () => {
   const [loading, setLoading] = useState(true);
 
   const obtenerCategoria = () => {
-    getCategorias().then((respuesta) => {
+    getCategoria().then((respuesta) => {
       setDato(respuesta);
     });
     setLoading(false);

@@ -9,7 +9,7 @@ export const getMarca = async () => {
 export const postMarca = async (objMarca) => {
   const response = await fetch(`${URL}/marcas`, {
     method: "POST",
-    body: JSON.stringify(objMarca),
+    body: JSON.stringify({...objMarca,marca_id:+objMarca.marca_id}),
     headers: { "Content-type": "application/json" },
   });
   const json = await response.json();

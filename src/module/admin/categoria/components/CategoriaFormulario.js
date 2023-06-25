@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { postCategorias, putCategoria } from "../../../../services/categoria";
+import { postCategoria, putCategoria } from "../../../../services/categoria";
 import Swal from "sweetalert2";
 
 const CategoriaFormulario = ({
@@ -40,7 +40,7 @@ const CategoriaFormulario = ({
     setError(false);
 
     if (modo === "crear") {
-      postCategorias(categoria).then((rpta) => {
+      postCategoria(categoria).then((rpta) => {
         if (rpta.id) {
           setCategoria({
             nombre: "",

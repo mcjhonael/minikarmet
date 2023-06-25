@@ -1,5 +1,5 @@
 import React from "react";
-import { deleteCategorias } from "../../../../services/categoria";
+import { deleteCategoria } from "../../../../services/categoria";
 import CategoriaCargando from "../components/CategoriaCargando";
 import Swal from "sweetalert2";
 
@@ -14,7 +14,7 @@ const CategoriaTabla = ({
 }) => {
   const handleDelete = (objDato) => {
     console.log(objDato);
-    deleteCategorias(objDato.id).then((resp) => {
+    deleteCategoria(objDato.id).then((resp) => {
       console.log(resp);
       if (resp.id) {
         Swal.fire({

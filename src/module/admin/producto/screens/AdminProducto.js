@@ -12,6 +12,7 @@ const AdminProducto = () => {
 
   const obtenerProducto = () => {
     getProducto().then((respuesta) => {
+      // console.log(respuesta);
       setDato(respuesta);
     });
     setLoading(false);

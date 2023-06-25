@@ -1,12 +1,12 @@
 import { URL } from "../enviroments/enviroments";
 
-export const getCategorias = async () => {
+export const getCategoria = async () => {
   const response = await fetch(`${URL}/categorias`);
   const json = await response.json();
   return json;
 };
 
-export const postCategorias = async (objCategoria) => {
+export const postCategoria = async (objCategoria) => {
   const response = await fetch(`${URL}/categorias`, {
     method: "POST",
     body: JSON.stringify(objCategoria),
@@ -29,7 +29,7 @@ export const putCategoria = async (objCateg) => {
 };
 
 
-export const deleteCategorias = async (id) => {
+export const deleteCategoria = async (id) => {
   const response = await fetch(`${URL}/categorias/${id}`, {method: "DELETE"});
   const json = await response.json();
   return json;

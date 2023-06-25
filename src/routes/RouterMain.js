@@ -10,7 +10,7 @@ const RouterMain = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/auth" element={<Home />} />
         <Route path="/admin/*" element={<RouterAdmin />}>
           <Route path="categorias" element={<AdminCategorias />} />
@@ -24,4 +24,4 @@ const RouterMain = () => {
   );
 };
 
-export default RouterMain
+export default RouterMain;
