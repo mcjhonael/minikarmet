@@ -1,5 +1,5 @@
 import React from "react";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 import CategoriaCargando from "../../categoria/components/CategoriaCargando";
 import { deleteProducto } from "../../../../services/producto";
 
@@ -17,17 +17,15 @@ const ProductoTabla = ({
     console.log(objDato.id);
     deleteProducto(objDato.id).then((resp) => {
       console.log(resp);
-    //     if (resp.id) {
-    //       Swal.fire({
-    //         position: "center",
-    //         icon: "error",
-    //         title: "Eliminado correctamente",
-    //         showConfirmButton: false,
-    //         timer: 1500,
-    //       });
-        // }
-        obtenerProducto();
-        setLoading(false);
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Eliminado correctamente",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      obtenerProducto();
+      setLoading(false);
     });
   };
   const handleUpdate = (dato) => {
@@ -63,12 +61,6 @@ const ProductoTabla = ({
                       <strong>precio venta</strong>
                     </th>
                     <th>
-                      <strong>precio compra</strong>
-                    </th>
-                    <th>
-                      <strong>stock</strong>
-                    </th>
-                    <th>
                       <strong>categoria</strong>
                     </th>
                     <th>
@@ -91,8 +83,6 @@ const ProductoTabla = ({
                         <td>{objDato.nombre}</td>
                         <td>{objDato.descripcion}</td>
                         <td>{objDato.precioVenta}</td>
-                        <td>{objDato.precioCompra}</td>
-                        <td>{objDato.stock}</td>
                         <td>{objDato.categoria.nombre}</td>
                         <td>{objDato.marca.nombre}</td>
                         <td>{objDato.medida.nombre}</td>

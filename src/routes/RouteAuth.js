@@ -1,14 +1,17 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import "./../module/auth/style/auth.css";
 import AdminHeader from "../module/admin/categoria/components/AdminHeader";
 
-const RouterAdmin = () => {
+const RouteAuth = () => {
   return (
     <>
       <AdminHeader />
-      <Outlet />
+      <main className="container">
+        <Outlet />
+      </main>
     </>
   );
 };
 
-export default RouterAdmin;
+export default RouteAuth;

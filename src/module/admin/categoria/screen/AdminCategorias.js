@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { getCategoria} from "../../../../services/categoria";
 import CategoriaFormulario from "../components/CategoriaFormulario";
-import CategoriaTabla from "../components/CategoriaTabla";
-
+import AdminHeader from "../components/AdminHeader";
+import CategoriaTabla from "../components/CategoriaTabla"
 
 const AdminCategorias = () => {
   const [dato, setDato] = useState([]);
@@ -21,6 +21,8 @@ const AdminCategorias = () => {
   }, []);
 
   return (
+    <>
+    <AdminHeader/>
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-md-8">
@@ -49,6 +51,8 @@ const AdminCategorias = () => {
         </div>
       </div>
     </div>
+    </>
+
   );
 };
 

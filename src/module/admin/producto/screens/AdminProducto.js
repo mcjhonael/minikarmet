@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getProducto } from "../../../../services/producto";
 import ProductoFormulario from "../components/ProductoFormulario";
 import ProductoTabla from "../components/ProductoTabla";
+import AdminHeader from "../../categoria/components/AdminHeader";
 
 
 const AdminProducto = () => {
@@ -21,7 +22,9 @@ const AdminProducto = () => {
   }, []);
 
   return (
-    <div className="container">
+    <>
+    <AdminHeader />
+    <div className="container-fluid">
       <div className="row justify-content-center">
         <div className="col-md-8">
           <ProductoFormulario
@@ -50,6 +53,7 @@ const AdminProducto = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

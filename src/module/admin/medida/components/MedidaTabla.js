@@ -16,7 +16,7 @@ const MedidaTabla = ({
     console.log(objDato);
     deleteMedida(objDato.id).then((resp) => {
       console.log(resp);
-      if (resp.id) {
+      // if (resp.id) {
         Swal.fire({
           position: "center",
           icon: "error",
@@ -26,7 +26,7 @@ const MedidaTabla = ({
         });
         obtenerMedida();
         // setLoading(false)
-      }
+      // }
     });
   };
   const handleUpdate = (dato) => {

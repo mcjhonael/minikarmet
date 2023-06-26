@@ -13,10 +13,10 @@ const CategoriaTabla = ({
   loading,
 }) => {
   const handleDelete = (objDato) => {
-    console.log(objDato);
+    // console.log(objDato);
     deleteCategoria(objDato.id).then((resp) => {
       console.log(resp);
-      if (resp.id) {
+      // if (resp.id) {
         Swal.fire({
           position: "center",
           icon: "error",
@@ -26,7 +26,7 @@ const CategoriaTabla = ({
         });
         obtenerCategoria();
         // setLoading(false)
-      }
+      // }
     });
   };
   const handleUpdate = (dato) => {

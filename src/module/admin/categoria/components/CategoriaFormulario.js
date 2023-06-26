@@ -38,43 +38,49 @@ const CategoriaFormulario = ({
       return;
     }
     setError(false);
-
-    if (modo === "crear") {
-      postCategoria(categoria).then((rpta) => {
-        if (rpta.id) {
-          setCategoria({
-            nombre: "",
-            descripcion: "",
-          });
-          obtenerCategoria();
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Creado Exitosamente",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
-      });
-    } else {
-      putCategoria(categoria).then(()=>{
-        if (categoria.id) {
+    
+    if (nombre.length <=20 && descripcion.length<=20) {
+      if (modo === "crear") {
+        postCategoria(categoria).then((rpta) => {
+          if (rpta.id) {
             setCategoria({
               nombre: "",
-            descripcion: "",
-            })
-            obtenerCategoria()
-            setModo("crear")
-            setCateg({})
-            Swal.fire({
-              icon: "success",
-              title: "Registro correctamente actualizado",
-              timer: 1500,
-              position: "center",
-              showConfirmButton: false,
+              descripcion: "",
             });
-        }
-      })
+            obtenerCategoria();
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Creado Exitosamente",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+      } else {
+        putCategoria(categoria).then(()=>{
+          if (categoria.id) {
+              setCategoria({
+                nombre: "",
+              descripcion: "",
+              })
+              obtenerCategoria()
+              setModo("crear")
+              setCateg({})
+              Swal.fire({
+                icon: "success",
+                title: "Registro correctamente actualizado",
+                timer: 1500,
+                position: "center",
+                showConfirmButton: false,
+              });
+          }
+        })
+      }
+      
+    }else{
+      console.log("datos muy largos");
+      setError(true)
     }
   };
 
@@ -89,8 +95,9 @@ const CategoriaFormulario = ({
           placeholder="Nombre"
           onChange={handleChange}
           value={nombre}
+          id="inputNombre"
         />
-        <label htmlFor="nombre" className="form-label">
+        <label htmlFor="inputNombre" className="form-label">
           Nombre Categoria
         </label>
         {error ? (
@@ -106,8 +113,9 @@ const CategoriaFormulario = ({
           placeholder="Descripcion"
           onChange={handleChange}
           value={descripcion}
+          id="inputDescripcion"
         />
-        <label htmlFor="descripcion" className="form-label">
+        <label htmlFor="inputDescripcion" className="form-label">
           Descripcion Categoria
         </label>
       </div>

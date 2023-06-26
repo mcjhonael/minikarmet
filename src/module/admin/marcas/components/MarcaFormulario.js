@@ -86,8 +86,9 @@ const MarcaFormulario = ({
           placeholder="Nombre"
           onChange={handleChange}
           value={nombre}
+          id="inputNombre"
         />
-        <label htmlFor="nombre" className="form-label">
+        <label htmlFor="inputNombre" className="form-label">
           Nombre marca
         </label>
         {error ? (

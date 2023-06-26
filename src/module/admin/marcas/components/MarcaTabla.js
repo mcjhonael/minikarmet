@@ -15,7 +15,7 @@ const MarcaTabla = ({
     console.log(objDato);
     deleteMarca(objDato.id).then((resp) => {
       console.log(resp);
-      if (resp.id) {
+      // if (resp.id) {
         Swal.fire({
           position: "center",
           icon: "error",
@@ -25,7 +25,7 @@ const MarcaTabla = ({
         });
         obtenerMarca();
         // setLoading(false)
-      }
+      // }
     });
   };
   const handleUpdate = (dato) => {

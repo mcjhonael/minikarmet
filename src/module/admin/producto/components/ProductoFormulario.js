@@ -19,9 +19,7 @@ const ProductoFormulario = ({
   const [productos, setProductos] = useState({
     nombre: "",
     descripcion: "",
-    precioCompra: 0,
     precioVenta: 0,
-    stock: 0,
     categoria_id: "",
     marca_id: "",
     medida_id: "",
@@ -31,9 +29,7 @@ const ProductoFormulario = ({
   const {
     nombre,
     descripcion,
-    precioCompra,
     precioVenta,
-    stock,
     categoria_id,
     marca_id,
     medida_id,
@@ -82,9 +78,7 @@ const ProductoFormulario = ({
           setProductos({
             nombre: "",
             descripcion: "",
-            precioCompra: 0,
             precioVenta: 0,
-            stock: 0,
             categoria_id: "",
             marca_id: "",
             medida_id: "",
@@ -105,9 +99,7 @@ const ProductoFormulario = ({
           setProductos({
             nombre: "",
             descripcion: "",
-            precioCompra: 0,
             precioVenta: 0,
-            stock: 0,
             categoria_id: "",
             marca_id: "",
             medida_id: "",
@@ -162,19 +154,7 @@ const ProductoFormulario = ({
           Descripcion Producto
         </label>
       </div>
-      <div className=" form-floating mb-3">
-        <input
-          type="number"
-          className="form-control"
-          name="precioCompra"
-          onChange={handleChange}
-          value={precioCompra}
-          id="inputPrecioCompra"
-        />
-        <label htmlFor="inputPrecioCompra" className="form-label">
-          Precio Compra Producto
-        </label>
-      </div>
+      
       <div className=" form-floating mb-3">
         <input
           type="number"
@@ -186,19 +166,6 @@ const ProductoFormulario = ({
         />
         <label htmlFor="inputPrecioVenta" className="form-label">
           Precio Venta Producto
-        </label>
-      </div>
-      <div className=" form-floating mb-3">
-        <input
-          type="number"
-          className="form-control"
-          name="stock"
-          onChange={handleChange}
-          value={stock}
-          id="inputStock"
-        />
-        <label htmlFor="inputStock" className="form-label">
-          Stock Producto
         </label>
       </div>
 
@@ -272,9 +239,7 @@ const ProductoFormulario = ({
       </div>
       {nombre !== "" &&
       descripcion !== "" &&
-      precioCompra !== "" &&
-      precioVenta !== "" &&
-      stock !== "" ? (
+      precioVenta !== ""  ? (
         <button className="btn btn-primary mt-4">
           {modo === "crear" ? <>Crear</> : <>Guardar Cambios</>}
         </button>

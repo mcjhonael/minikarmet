@@ -8,7 +8,7 @@ const AdminHeader = () => {
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
             <li className="nav-item">
               <NavLink
-                to="categorias"
+                to="/admin/categorias"
                 className="nav-link"
               >
                 categorias
@@ -16,7 +16,7 @@ const AdminHeader = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                to="marcas"
+                to="/admin/marcas"
                 className="nav-link"
               >
                 marcas
@@ -24,7 +24,7 @@ const AdminHeader = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                to="medidas"
+                to="/admin/medidas"
                 className="nav-link"
               >
                 medidas
@@ -32,7 +32,7 @@ const AdminHeader = () => {
             </li>
             <li className="nav-item">
               <NavLink
-                to="productos"
+                to="/admin/productos"
                 className="nav-link"
               >
                 productos

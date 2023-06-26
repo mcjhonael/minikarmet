@@ -89,8 +89,9 @@ const MedidaFormulario = ({
           placeholder="codigo"
           onChange={handleChange}
           value={codigo}
+          id="inputCodigo"
         />
-        <label htmlFor="nombre" className="form-label">
+        <label htmlFor="inputCodigo" className="form-label">
           Codigo
         </label>
         {error ? (
@@ -103,11 +104,11 @@ const MedidaFormulario = ({
           type="text"
           className="form-control"
           name="nombre"
-          placeholder="Descripcion"
           onChange={handleChange}
           value={nombre}
+          id="inputNombre"
         />
-        <label htmlFor="descripcion" className="form-label">
+        <label htmlFor="inputNombre" className="form-label">
           Nombre
         </label>
       </div>
