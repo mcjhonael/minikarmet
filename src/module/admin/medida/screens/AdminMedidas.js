@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import {getMedida} from "../../../../services/Medida"
 import MedidaFormulario from "../components/MedidaFormulario";
 import MedidaTabla from "../components/MedidaTabla";
-import AdminHeader from "../../categoria/components/AdminHeader";
 
 const AdminMedidas = () => {
   const [dato, setDato] = useState([]);
@@ -21,8 +20,6 @@ const AdminMedidas = () => {
   }, []);
 
   return (
-    <>
-    <AdminHeader />
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-md-8">
@@ -51,7 +48,6 @@ const AdminMedidas = () => {
         </div>
       </div>
     </div>
-    </>
   );
 };
 

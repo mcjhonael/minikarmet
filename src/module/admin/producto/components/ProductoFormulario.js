@@ -120,7 +120,7 @@ const ProductoFormulario = ({
   };
 
   return (
-    <form className="shadow mt-4 borde" onSubmit={handleSubmit}>
+    <form className="shadow mt-4 borde text-center" onSubmit={handleSubmit}>
       <h2> Crear Producto</h2>
       <div className=" form-floating mb-3">
         <input
@@ -172,11 +172,11 @@ const ProductoFormulario = ({
       <div className="row">
         <div className="col-md-4">
           <label htmlFor="inputCategoria" className="form-label">
-            categoria
+            Categoria
           </label>
-          <select
+          <select 
             id="inputCategoria"
-            className="form-select"
+            className="form-select text-center"
             name={"categoria_id"}
             value={categoria_id}
             onChange={handleChange}
@@ -194,11 +194,11 @@ const ProductoFormulario = ({
         </div>
         <div className="col-md-4">
           <label htmlFor="inputMarca" className="form-label">
-            marca
+            Marca
           </label>
           <select
             id="inputMarca"
-            className="form-select"
+            className="form-select text-center"
             name="marca_id"
             value={marca_id}
             onChange={handleChange}
@@ -216,11 +216,11 @@ const ProductoFormulario = ({
         </div>
         <div className="col-md-4">
           <label htmlFor="inputMedida" className="form-label">
-            medida
+            Medida
           </label>
           <select
             id="inputMedida"
-            className="form-select"
+            className="form-select text-center"
             onChange={handleChange}
             name="medida_id"
             value={medida_id}
