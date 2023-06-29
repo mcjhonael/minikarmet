@@ -34,11 +34,11 @@ const ProductoTabla = ({
     setProducto(dato);
   };
   return (
-    <div className="row mt-4">
+    <div className="row mt-4 text-center">
       <div className="col">
         <div className="card shadow">
           <div className="card-body">
-            <h2>tabla de producto</h2>
+            <h2>Tabla de producto</h2>
             {loading ? (
               <CategoriaCargando />
             ) : (
