@@ -20,9 +20,9 @@ const AdminCategorias = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className=" container-fluid cuadrado">
       <div className="row justify-content-center">
-        <div className="col-md-8">
+        <div className="col">
           <CategoriaFormulario
             dato={dato}
             obtenerCategoria={obtenerCategoria}
@@ -35,7 +35,7 @@ const AdminCategorias = () => {
       </div>
 
       <div className="row justify-content-center mt-4">
-        <div className="col-md-8">
+        <div className="col">
           <CategoriaTabla
             dato={dato}
             obtenerCategoria={obtenerCategoria}
@@ -46,6 +46,9 @@ const AdminCategorias = () => {
             loading={loading}
           />
         </div>
+      </div>
+      <div className="cuadrado container">
+        hola
       </div>
     </div>
   );

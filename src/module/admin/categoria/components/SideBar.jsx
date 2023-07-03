@@ -6,7 +6,6 @@ import {GiWeight} from "react-icons/gi"
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
-import "../components/SideBar.css"
 
 const routes = [
   {
