@@ -9,12 +9,11 @@ import RouteAuth from "./RouteAuth";
 import RutaPrivada from "./RutaPrivada";
 import RouterAdmin from "./RouterAdmin";
 
-import SideBar from "../module/admin/categoria/components/SideBar";
+import AdminVenta from "../module/admin/venta/screen/AdminVenta";
 
 const RouterMain = () => {
   return (
     <Router>
-      <SideBar>
         <Routes>
           <Route path="/" element={<AuthLogin />} />
 
@@ -31,10 +30,10 @@ const RouterMain = () => {
             <Route path="/admin/marcas" element={<AdminMarcas />} />
             <Route path="/admin/medidas" element={<AdminMedidas />} />
             <Route path="/admin/productos" element={<AdminProducto />} />
+            <Route path="/admin/ventas" element={<AdminVenta />} />
           </Route>
           <Route path="/vendedor" element={<AdminMedidas />} />
         </Routes>
-      </SideBar>
     </Router>
   );
 };

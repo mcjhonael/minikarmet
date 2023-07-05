@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getMarca } from "../../../../services/Marca";
 import MarcaFormulario from "../components/MarcaFormulario";
 import MarcaTabla from "../components/MarcaTabla";
+import SideBar from "../../categoria/components/SideBar";
 
 const AdminMarcas = () => {
   const [dato, setDato] = useState([]);
@@ -20,6 +21,8 @@ const AdminMarcas = () => {
   }, []);
 
   return (
+    <>
+    <SideBar/>
         <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-8">
@@ -35,7 +38,7 @@ const AdminMarcas = () => {
         </div>
 
         <div className="row justify-content-center mt-4">
-          <div className="col-md-8">
+          <div className="col">
             <MarcaTabla
               dato={dato}
               obtenerMarca={obtenerMarca}
@@ -48,6 +51,7 @@ const AdminMarcas = () => {
           </div>
         </div>
       </div>
+      </>
   );
 };
 

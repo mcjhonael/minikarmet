@@ -1,6 +1,7 @@
 import React from "react";
 import { deleteCategoria } from "../../../../services/categoria";
 import CategoriaCargando from "../components/CategoriaCargando";
+import CategoriaFormulario from "../components/CategoriaFormulario";
 import Swal from "sweetalert2";
 
 const CategoriaTabla = ({
@@ -17,15 +18,15 @@ const CategoriaTabla = ({
     deleteCategoria(objDato.id).then((resp) => {
       console.log(resp);
       // if (resp.id) {
-        Swal.fire({
-          position: "center",
-          icon: "error",
-          title: "Eliminado correctamente",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        obtenerCategoria();
-        // setLoading(false)
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Eliminado correctamente",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      obtenerCategoria();
+      // setLoading(false)
       // }
     });
   };
@@ -35,7 +36,7 @@ const CategoriaTabla = ({
   };
   return (
     <div className="row mt-4">
-      <div className="col">
+      <div className="col bor">
         <div className="card shadow">
           <div className="card-body">
             <h2>tabla de categoria</h2>
@@ -71,20 +72,24 @@ const CategoriaTabla = ({
                         <td>{objDato.descripcion}</td>
                         <td>
                           <button
-                            className="btn btn-outline-warning"
+                            type="button"
+                            className="btn btn-warning"
+                            data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"
                             onClick={() => {
                               handleUpdate(objDato);
                             }}
                           >
-                            Actualizar
+                            <i class="fas fa-pen-square"></i>
                           </button>
                           <button
+                            type="button"
                             className="btn btn-outline-danger"
                             onClick={() => {
                               handleDelete(objDato);
                             }}
                           >
-                            Eliminar
+                            <i class="fa-solid fa-trash"></i>
                           </button>
                         </td>
                       </tr>

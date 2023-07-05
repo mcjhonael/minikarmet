@@ -1,13 +1,18 @@
-import React from 'react'
+import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import RouterMain from './routes/RouterMain'
+import "bootstrap/dist/js/bootstrap.js";
+import RouterMain from "./routes/RouterMain";
 import "./style/style.css";
-import "./App.css"
+import "./App.css";
 
 const App = () => {
   return (
-    <RouterMain/>
-  )
-}
+    <>
+    <RouterMain />
+      <div className="container-fluid">
+      </div>
+    </>
+  );
+};
 
-export default App
+export default App;

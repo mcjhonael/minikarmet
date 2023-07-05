@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getProducto } from "../../../../services/producto";
 import ProductoFormulario from "../components/ProductoFormulario";
 import ProductoTabla from "../components/ProductoTabla";
+import SideBar from "../../categoria/components/SideBar";
 
 
 const AdminProducto = () => {
@@ -21,7 +22,8 @@ const AdminProducto = () => {
   }, []);
 
   return (
-    <>
+    <>    
+    <SideBar/>
     <div className="container-fluid">
       <div className="row justify-content-center">
         <div className="col-md-8">
@@ -37,7 +39,7 @@ const AdminProducto = () => {
       </div>
 
       <div className="row justify-content-center mt-4">
-        <div className="col-md-8">
+        <div className="col">
           <ProductoTabla
             dato={dato}
             obtenerProducto={obtenerProducto}

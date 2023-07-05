@@ -1,7 +1,7 @@
 import React from "react";
 import Swal from "sweetalert2";
 import { deleteMarca } from "../../../../services/Marca";
-import CategoriaCargando from "../../../admin/categoria/components/CategoriaCargando"
+import CategoriaCargando from "../../../admin/categoria/components/CategoriaCargando";
 const MarcaTabla = ({
   dato,
   obtenerMarca,
@@ -16,15 +16,15 @@ const MarcaTabla = ({
     deleteMarca(objDato.id).then((resp) => {
       console.log(resp);
       // if (resp.id) {
-        Swal.fire({
-          position: "center",
-          icon: "error",
-          title: "Eliminado correctamente",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-        obtenerMarca();
-        // setLoading(false)
+      Swal.fire({
+        position: "center",
+        icon: "error",
+        title: "Eliminado correctamente",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      obtenerMarca();
+      // setLoading(false)
       // }
     });
   };
@@ -34,7 +34,7 @@ const MarcaTabla = ({
   };
   return (
     <div className="row mt-4">
-      <div className="col">
+      <div className="col bor">
         <div className="card shadow">
           <div className="card-body">
             <h2>tabla de Marcas</h2>
@@ -67,11 +67,13 @@ const MarcaTabla = ({
                         <td>
                           <button
                             className="btn btn-outline-warning"
+                            data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"
                             onClick={() => {
                               handleUpdate(objDato);
                             }}
                           >
-                            Actualizar
+                            <i class="fas fa-pen-square"></i>
                           </button>
                           <button
                             className="btn btn-outline-danger"
@@ -79,7 +81,7 @@ const MarcaTabla = ({
                               handleDelete(objDato);
                             }}
                           >
-                            Eliminar
+                            <i class="fa-solid fa-trash"></i>
                           </button>
                         </td>
                       </tr>

@@ -35,7 +35,7 @@ const ProductoTabla = ({
   };
   return (
     <div className="row mt-4 text-center">
-      <div className="col">
+      <div className="col bor">
         <div className="card shadow">
           <div className="card-body">
             <h2>Tabla de producto</h2>
@@ -89,11 +89,13 @@ const ProductoTabla = ({
                         <td>
                           <button
                             className="btn btn-outline-warning"
+                            data-bs-toggle="modal"
+                            data-bs-target="#staticBackdrop"
                             onClick={() => {
                               handleUpdate(objDato);
                             }}
                           >
-                            Actualizar
+                            <i class="fas fa-pen-square"></i>
                           </button>
                           <button
                             className="btn btn-outline-danger"
@@ -101,7 +103,7 @@ const ProductoTabla = ({
                               handleDelete(objDato);
                             }}
                           >
-                            Eliminar
+                            <i class="fa-solid fa-trash"></i>
                           </button>
                         </td>
                       </tr>
