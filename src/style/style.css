@@ -6,6 +6,12 @@ border-radius: 10px;
 padding: 10px;
 box-shadow: 10px 10px #444;
 }
+<<<<<<< HEAD
+=======
+.cuadrado{
+    border: 1px solid red;
+}
+>>>>>>> 0cc178a503a52651506b83ca929d4b41755a8d26
 
 .main-container {
     display: flex;
@@ -112,9 +118,16 @@ box-shadow: 10px 10px #444;
     padding-left: 20px;
     border-bottom: #fff 0.5px solid;
   }
+<<<<<<< HEAD
   .mt{
     margin-left: 10px;
   }
   /* .bor{
     width: 1000px;
   } */
+=======
+  
+  .container{
+    width: 800px;
+  }
+>>>>>>> 0cc178a503a52651506b83ca929d4b41755a8d26

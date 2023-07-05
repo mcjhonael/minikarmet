@@ -3,6 +3,7 @@ import { deleteCategoria } from "../../../../services/categoria";
 import CategoriaCargando from "../components/CategoriaCargando";
 import CategoriaFormulario from "../components/CategoriaFormulario";
 import Swal from "sweetalert2";
+import MaterialTable from "material-table"
 
 const CategoriaTabla = ({
   dato,
@@ -13,6 +14,15 @@ const CategoriaTabla = ({
   setCateg,
   loading,
 }) => {
+
+  const columnas=[
+    {
+      "title":"Artista",
+      
+
+    }
+  ]
+
   const handleDelete = (objDato) => {
     // console.log(objDato);
     deleteCategoria(objDato.id).then((resp) => {

@@ -21,6 +21,7 @@ const AdminCategorias = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
     <>
       <SideBar />
       <div className="container">
@@ -49,6 +50,39 @@ const AdminCategorias = () => {
         </div>
       </div>
     </>
+=======
+    <div className=" container-fluid cuadrado">
+      <div className="row justify-content-center">
+        <div className="col">
+          <CategoriaFormulario
+            dato={dato}
+            obtenerCategoria={obtenerCategoria}
+            modo={modo}
+            setModo={setModo}
+            categ={categ}
+            setCateg={setCateg}
+          />
+        </div>
+      </div>
+
+      <div className="row justify-content-center mt-4">
+        <div className="col">
+          <CategoriaTabla
+            dato={dato}
+            obtenerCategoria={obtenerCategoria}
+            modo={modo}
+            setModo={setModo}
+            categ={categ}
+            setCateg={setCateg}
+            loading={loading}
+          />
+        </div>
+      </div>
+      <div className="cuadrado container">
+        hola
+      </div>
+    </div>
+>>>>>>> 0cc178a503a52651506b83ca929d4b41755a8d26
   );
 };
 
