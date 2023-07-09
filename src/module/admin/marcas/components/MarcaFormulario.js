@@ -31,11 +31,11 @@ const MarcaFormulario = ({
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const buscar = dato.find((objDato) => objDato.nombre === nombre);
-    if (buscar) {
-      setError(true);
-      return;
-    }
+    // const buscar = dato.find((objDato) => objDato.nombre === nombre);
+    // if (buscar) {
+    //   setError(true);
+    //   return;
+    // }
     setError(false);
 
     if (modo === "crear") {
@@ -61,7 +61,7 @@ const MarcaFormulario = ({
             nombre: "",
           });
           obtenerMarca();
-          setModo("crear");
+          setModo("crear"); 
           setMarca({});
           Swal.fire({
             icon: "success",

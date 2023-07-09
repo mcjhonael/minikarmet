@@ -5,7 +5,7 @@ import { getCategoria } from "../../../../services/categoria";
 import { getMarca } from "../../../../services/Marca";
 import { getMedida } from "../../../../services/Medida";
 const ProductoFormulario = ({
-  dato,
+  // dato,
   obtenerProducto,
   modo,
   setModo,
@@ -64,11 +64,11 @@ const ProductoFormulario = ({
   const handleSubmit = (e) => {
     console.log(productos);
     e.preventDefault();
-    const buscar = dato.find((objDato) => objDato.nombre === nombre);
-    if (buscar) {
-      setError(true);
-      return;
-    }
+    // const buscar = dato.find((objDato) => objDato.nombre === nombre);
+    // if (buscar) {
+    //   setError(true);
+    //   return;
+    // }
     setError(false);
 
     if (modo === "crear") {

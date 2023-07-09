@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
-import { FaBars,FaShoppingCart } from "react-icons/fa";
-import {BiSearch, BiCategoryAlt } from "react-icons/bi";
-import {TbBoxModel2} from "react-icons/tb"
-import {GiWeight} from "react-icons/gi"
+import { FaBars, FaShoppingCart } from "react-icons/fa";
+import { BiSearch, BiCategoryAlt } from "react-icons/bi";
+import { TbBoxModel2 } from "react-icons/tb";
+import { GiWeight } from "react-icons/gi";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SidebarMenu from "./SidebarMenu";
@@ -33,7 +33,17 @@ const routes = [
     name: "Ventas",
     icon: <FaShoppingCart />,
   },
-]
+  {
+    path: "/admin/compras",
+    name: "Compras",
+    icon: <FaShoppingCart />,
+  },
+  {
+    path: "/admin/users",
+    name: "Users",
+    icon: <FaShoppingCart />,
+  },
+];
 
 const SideBar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -137,12 +147,17 @@ const SideBar = ({ children }) => {
               }
 
               return (
-                <NavLink style={{textDecoration : 0}}
+                <NavLink
+                  style={{ textDecoration: 0 }}
                   to={route.path}
                   key={index}
-                  className="link"
-                  activeClassName="active"
+                  // className="link"
+                  // activeClassName="active"
+                  className= {({ isActive }) =>
+                      isActive ? "link" : "link"
+                    }
                 >
+
                   <div className="icon">{route.icon}</div>
                   <AnimatePresence>
                     {isOpen && (

@@ -3,7 +3,7 @@ import { postCategoria, putCategoria } from "../../../../services/categoria";
 import Swal from "sweetalert2";
 
 const CategoriaFormulario = ({
-  dato,
+  // dato,
   obtenerCategoria,
   modo,
   setModo,
@@ -32,11 +32,11 @@ const CategoriaFormulario = ({
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const buscar = dato.find((objDato) => objDato.nombre === nombre);
-    if (buscar) {
-      setError(true);
-      return;
-    }
+    // const buscar = dato.find((objDato) => objDato.nombre === nombre);
+    // if (buscar) {
+    //   setError(true);
+    //   return;
+    // }
     setError(false);
 
     if (nombre.length <= 20 && descripcion.length <= 20) {
@@ -91,7 +91,7 @@ const CategoriaFormulario = ({
         data-bs-toggle="modal"
         data-bs-target="#staticBackdrop"
       >
-        <i class="fa fa-plus"></i>
+        <i className="fa fa-plus"></i>
       </button>
 
       <div

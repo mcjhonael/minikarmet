@@ -1,7 +1,7 @@
 import React from "react";
 
-const DetalleVentaTabla = ({ venta_inventarios }) => {
-  console.log(venta_inventarios);
+const DetalleVentaTabla = ({ compra_inventarios }) => {
+  console.log(compra_inventarios);
   let monto = 0;
   return (
     <td>
@@ -60,20 +60,20 @@ const DetalleVentaTabla = ({ venta_inventarios }) => {
                 </thead>
 
                 <tbody>
-                  {venta_inventarios.map((objVenta,index) => {
+                  {compra_inventarios.map((objCompra,index) => {
                     monto =
                       monto +
-                      objVenta.cantidad * objVenta.precio;
+                      objCompra.cantidad * objCompra.precio;
                     return (
-                      <tr key={objVenta.id}>
+                      <tr key={objCompra.id}>
                         <td>{index+1}</td>
-                        <td>{objVenta.inventario.producto.nombre}</td>
-                        <td>{objVenta.cantidad}</td>
-                        <td>{objVenta.precio}</td>
+                        <td>{objCompra.inventario.producto.nombre}</td>
+                        <td>{objCompra.cantidad}</td>
+                        <td>{objCompra.precio}</td>
                         <td>
                           {
-                            (objVenta.cantidad *
-                              objVenta.precio).toFixed(2)
+                            (objCompra.cantidad *
+                              objCompra.precio).toFixed(2)
                           }
                         </td>
                       </tr>

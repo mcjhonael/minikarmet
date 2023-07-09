@@ -32,11 +32,11 @@ const MedidaFormulario = ({
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const buscar = dato.find((objDato) => objDato.codigo === codigo);
-    if (buscar) {
-      setError(true);
-      return;
-    }
+    // const buscar = dato.find((objDato) => objDato.codigo === codigo);
+    // if (buscar) {
+    //   setError(true);
+    //   return;
+    // }
     setError(false);
 
     if (modo === "crear") {

@@ -10,6 +10,8 @@ import RutaPrivada from "./RutaPrivada";
 import RouterAdmin from "./RouterAdmin";
 
 import AdminVenta from "../module/admin/venta/screen/AdminVenta";
+import AdminCompra from "../module/admin/compra/screen/AdminCompra";
+import AdminUsers from "../module/admin/users/screen/AdminUsers";
 
 const RouterMain = () => {
   return (
@@ -31,6 +33,8 @@ const RouterMain = () => {
             <Route path="/admin/medidas" element={<AdminMedidas />} />
             <Route path="/admin/productos" element={<AdminProducto />} />
             <Route path="/admin/ventas" element={<AdminVenta />} />
+            <Route path="/admin/compras" element={<AdminCompra />} />
+            <Route path="/admin/users" element={<AdminUsers />} />
           </Route>
           <Route path="/vendedor" element={<AdminMedidas />} />
         </Routes>
